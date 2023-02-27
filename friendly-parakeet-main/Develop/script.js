@@ -17,7 +17,7 @@ var upperLetter = function (x) {
   return x.toUpperCase();
 };
 
-upperCase = lowerCase.map(toUpperCase);
+upperCase = lowerCase.map(upperLetter);
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -51,6 +51,8 @@ function generatePassword() {
     console.log("Upper case" + confirmUpper);
     confirmSpecialCharacter = confirm("Would you like to include special characters?");
     console.log("Special Characters" + confirmSpecialCharacter);
+    confirmNumber = confirm("Would you like to include numbers?");
+    console.log("Numbers included " + confirmNumber);
   };
   // No options Selected
   if (!confirmLower && !confirmUpper && !confirmNumber && !confirmSpecialCharacter) {
@@ -100,8 +102,35 @@ function generatePassword() {
     userInput = number.concat(specialCharacter);
     console.log(userInput);
     
+  } else if (confirmLower) {
+    userInput = lowerCase;
+    console.log(userInput);
+
+  } else if (confirmUpper) {
+    userInput = blankUpper.concat(upperCase);
+    console.log(userInput);
+
+  } else if (confirmNumber) {
+    userInput = number;
+    console.log(userInput);
+
+  } else if (confirmSpecialCharacter) {
+    userInput = specialCharacter;
+    console.log(userInput);
+
+  }; 
+
+  var chosenPassword = [];
+
+  for (var i = 0; i < passwordSize; i++) {
+    var everyInput = userInput[Math.floor(Math.random() * userInput.length)];
+    chosenPassword.push(everyInput);
+    console.log(everyInput);
+
   }
 
-
+  var securePassword = chosenPassword.join("");
+  console.log("Your secure password:" + securePassword);
+  return chosenPassword;
 
 }
