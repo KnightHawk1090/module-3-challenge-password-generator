@@ -71,6 +71,35 @@ function generatePassword() {
   } else if (confirmLower && confirmNumber && confirmSpecialCharacter) {
     userInput = lowerCase.concat(number, specialCharacter);
     console.log(userInput);
+
+  } else if (confirmUpper, confirmNumber, confirmSpecialCharacter) {
+    userInput = lowerCase.concat(upperCase, specialCharacter);
+    console.log(userInput);
+    // Two options are selected
+  } else if (confirmLower && confirmUpper) {
+    userInput = lowerCase.concat(upperCase);
+    console.log(userInput);
+
+  } else if (confirmLower && confirmNumber) {
+    userInput = lowerCase.concat(number);
+    console.log(userInput);
+
+  } else if (confirmLower && confirmSpecialCharacter) {
+    userInput = lowerCase.concat(specialCharacter);
+    console.log(userInput);
+
+  } else if (confirmUpper && confirmSpecialCharacter) {
+    userInput = upperCase.concat(number);
+    console.log(userInput);
+
+  } else if (confirmUpper && confirmSpecialCharacter) {
+    userInput = upperCase.concat(specialCharacter);
+    console.log(userInput);
+
+  } else if (confirmNumber && confirmSpecialCharacter) {
+    userInput = number.concat(specialCharacter);
+    console.log(userInput);
+    
   }
 
 
